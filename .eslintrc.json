@@ -1,5 +1,5 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript", "prettier", "plugin:biome/recommended"],
+  "extends": ["next/core-web-vitals", "next/typescript", "prettier"],
   "overrides": [
     {
       "files": ["jest.config.js", "next.config.js"],
