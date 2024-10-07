@@ -1,6 +1,8 @@
 # Next.js 14 Template with TypeScript and Tailwind CSS
 
-This is a modern, feature-rich template for building web applications using Next.js 14, TypeScript, and Tailwind CSS. It includes a variety of pre-configured tools and best practices to help you get started quickly and efficiently.
+This is a modern, feature-rich template for building web applications using Next.js 14, TypeScript, and Tailwind CSS. Unlike the usual code base, this project attempts to optimize a workflow where they're coding along with an LLM such as Sonnet but also adding TTD as they go along.I already went through the trouble of stabbing my eyes with a dull spoon dealing with jest working with TypeScript (as a newbie)
+
+It includes a variety of pre-configured tools and best practices to help you get started quickly and efficiently.
 
 ## Features
 
@@ -14,6 +16,7 @@ This is a modern, feature-rich template for building web applications using Next
 - **Husky**: For pre-commit hooks
 - **lint-staged**: To run linters on git staged files
 - **pnpm**: Fast, disk space efficient package manager
+- **biome**: Versatile code formatting, linting, and analysis tool
 
 ## Package Management with pnpm
 
@@ -136,16 +139,16 @@ import userEvent from '@testing-library/user-event'
 import Button from '@/components/Button'
 
 describe('Button', () => {
-    it('renders with correct text', () => {
-        render(<Button>Click me</Button>)
-        expect(screen.getByRole('button', { name: /click me/i })).toBeInTheDocument()
-    })
-    it('calls onClick when clicked', async () => {
-        const handleClick = jest.fn()
-        render(<Button onClick={handleClick}>Click me</Button>)
-        await userEvent.click(screen.getByRole('button', { name: /click me/i }))
-        expect(handleClick).toHaveBeenCalledTimes(1)
-    })
+   it('renders with correct text', () => {
+      render(<Button>Click me</Button>)
+      expect(screen.getByRole('button', { name: /click me/i })).toBeInTheDocument()
+   })
+   it('calls onClick when clicked', async () => {
+      const handleClick = jest.fn()
+      render(<Button onClick={handleClick}>Click me</Button>)
+      await userEvent.click(screen.getByRole('button', { name: /click me/i }))
+      expect(handleClick).toHaveBeenCalledTimes(1)
+   })
 })
 ```
 
